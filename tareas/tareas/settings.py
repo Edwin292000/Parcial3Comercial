@@ -25,8 +25,9 @@ SECRET_KEY = 'tllkl-98heq-e2=pns=&t(nl&^p23ndhrvm^3i*64sq%u5#uv_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*','localhost','127.0.0.1','http://localhost:8080']
 
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Application definition
 
@@ -39,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tareas.apps.apptareas',
     'graphene_django',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

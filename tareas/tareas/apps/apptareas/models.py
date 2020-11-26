@@ -7,6 +7,7 @@ class estado(models.Model):
     nombre=models.CharField(max_length=50)
     descripcion=models.TextField()
 
+
 class tareas(models.Model):
     titulo=models.CharField(max_length=50)
     descripcion = models.TextField()
